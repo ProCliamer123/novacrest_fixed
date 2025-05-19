@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 245, 242, 232;
+  --background-end-rgb: 245, 242, 232;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(to bottom, transparent, rgb(var(--background-end-rgb))) rgb(var(--background-start-rgb));
+}
+
+/* Home page specific styles */
+.grid-background {
+  background-color: #f5f2e8;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.service-box {
+  background-color: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 0.75rem;
+  padding: 2rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-box:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.service-icon {
+  background-color: rgba(0, 0, 0, 0.05);
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  color: rgba(0, 0, 0, 0.7);
+  margin-bottom: 1.5rem;
+  line-height: 1.6;
+}
+
+.service-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.8);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.service-link:hover {
+  color: #000;
+}
+
+.services-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.02);
+  z-index: -1;
+}
+
+/* Client Portal Button Styles */
+.client-portal-button {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 40;
+  transition: all 0.3s ease;
+}
+
+.client-portal-button:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Floating Chat Button Styles */
+.floating-chat-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 40;
+  transition: all 0.3s ease;
+}
+
+.floating-chat-button:hover {
+  transform: scale(1.05);
+}
+
+/* Animation for fade-in elements */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease forwards;
+  opacity: 0;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
